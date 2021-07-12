@@ -1,0 +1,36 @@
+# This template creates a Storage Account (v2) on Azure.
+#This was done using vscode with the Azure resource module extension installed.
+
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "StorageAccountName": {
+            "type": "string",
+            "metadata": {
+                "description": "name of storage account"
+            },
+            "minLength":3,
+            "maxLength":24
+        }
+    },
+    "functions": [],
+    "variables": {},
+    "resources": [{
+        "name": "[parameters('StorageAccountName')]",
+        "type": "Microsoft.Storage/storageAccounts",
+        "apiVersion": "2019-06-01",
+        "tags": {
+            "displayName": "storageaccountmain" // it could be anything (just a tag)
+        },
+        "location": "[resourceGroup().location]",
+        "kind": "StorageV2",
+        "sku": {
+            "name": "Standard_LRS",
+            "tier": "Standard"
+            
+        }
+    }],
+    "outputs": {}
+}
+
