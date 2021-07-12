@@ -1,0 +1,14 @@
+#Please note that elbow brackets must be removed.
+
+# Install PS Az-Module.
+
+Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
+
+# Create new resource group and location. You can just GET if you would like to use an existing resource group.
+
+New-AzResourceGroup -Name <name of new RG> -Location <choose a known Azure location>
+
+# Make the deployment and reference the template and parameter files. 
+# Change directory to where you have the files or else you would need to declare the (relative) path.
+
+New-AzResourceGroupDeployment -ResourceGroupName <one created earlier> -TemplateFile ./<name of templatefile>.json -TemplateParameterFile ./<name of parameterfile>.json
