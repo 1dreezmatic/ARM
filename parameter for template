@@ -5,7 +5,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "StorageAccountName": {
-            "value": "storefront" 
+            "value": "<input a preferred name here between 3 and 24 xters>" 
         }
     }
 }
